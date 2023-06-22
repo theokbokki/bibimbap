@@ -1,0 +1,20 @@
+{
+	"name": "@bibimbap/desktop",
+	"private": true,
+	"scripts": {
+		"build": "tauri build",
+		"dev": "tauri dev",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare"
+	},
+	"devDependencies": {
+		"@nuxt/devtools": "latest",
+		"@tauri-apps/cli": "^1.4.0",
+		"@types/node": "^18",
+		"nuxt": "^3.5.2"
+	},
+	"dependencies": {
+		"@bibimbap/ui": "workspace:^1.0.0",
+		"@tauri-apps/api": "^1.4.0"
+	}
+}
