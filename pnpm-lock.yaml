@@ -24,6 +24,16 @@ importers:
       '@types/node': 18.16.18
       nuxt: 3.5.3_@types+node@18.16.18
 
+  apps/web:
+    specifiers:
+      axios: ^1.1.2
+      laravel-vite-plugin: ^0.7.5
+      vite: ^4.0.0
+    devDependencies:
+      axios: 1.4.0
+      laravel-vite-plugin: 0.7.8_vite@4.3.9
+      vite: 4.3.9
+
   packages/api:
     specifiers:
       axios: ^1.1.2
