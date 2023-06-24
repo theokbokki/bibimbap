@@ -15,6 +15,7 @@
 	},
 	"dependencies": {
 		"@bibimbap/ui": "workspace:^1.0.0",
+		"@bibimbap/shared-commands": "workspace:^1.0.0",
 		"@tauri-apps/api": "^1.4.0"
 	}
 }

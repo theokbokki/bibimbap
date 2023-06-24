@@ -1,0 +1,11 @@
+[package]
+name = "shared_commands"
+version = "0.0.0"
+authors = [ "You" ]
+description = ""
+edition = "2021"
+rust-version = "1.60"
+
+[dependencies]
+reqwest = "0.11.18"
+tauri = { version = "1.4.0" }

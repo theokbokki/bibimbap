@@ -1,6 +1,5 @@
 <script setup>
-import { ref } from 'vue'
-import { callApi } from '@/lib/bindings.ts'
+import { callApi } from '@bibimbap/shared-commands/bindings.ts'
 
 async function handleSubmit(e) {
 	const formData = new FormData(e.target);
