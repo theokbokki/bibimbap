@@ -1,0 +1,13 @@
+@use '../variables';
+
+.link {
+	text-decoration: underline;
+
+	&:hover {
+		color: variables.$primary-400;
+	}
+
+	&:active, &:focus {
+		color: variables.$primary-100;
+	}
+}

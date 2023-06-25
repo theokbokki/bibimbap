@@ -1,0 +1,11 @@
+@use '../variables';
+
+.btn {
+	&:hover {
+		background: variables.$primary-200;
+	}
+
+	&:active, &:focus {
+		background: variables.$primary-100;
+	}
+}
