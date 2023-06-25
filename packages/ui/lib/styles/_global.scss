@@ -1,0 +1,5 @@
+@use 'variables';
+
+:root, body {
+	font-family: variables.$text-font;
+}

@@ -1,0 +1,83 @@
+@use '../variables';
+
+// Color
+.clr-neutral-200 {
+	color: variables.$neutral-200;
+}
+
+.clr-neutral-300 {
+	color: variables.$neutral-300;
+}
+
+.clr-neutral-500 {
+	color: variables.$neutral-500;
+}
+
+.clr-neutral-600 {
+	color: variables.$neutral-600;
+}
+
+.clr-neutral-700 {
+	color: variables.$neutral-700;
+}
+
+.clr-primary-100 {
+	color: variables.$primary-100;
+}
+
+.clr-primary-200 {
+	color: variables.$primary-200;
+}
+
+.clr-primary-400 {
+	color: variables.$primary-400;
+}
+
+.clr-error-light {
+	color: variables.$error-light;
+} 
+
+.clr-error {
+	color: variables.$error;
+}
+
+// Background
+.bg-neutral-200 {
+	background: variables.$neutral-200;
+}
+
+.bg-neutral-300 {
+	background: variables.$neutral-300;
+}
+
+.bg-neutral-500 {
+	background: variables.$neutral-500;
+}
+
+.bg-neutral-600 {
+	background: variables.$neutral-600;
+}
+
+.bg-neutral-700 {
+	background: variables.$neutral-700;
+}
+
+.bg-primary-100 {
+	background: variables.$primary-100;
+}
+
+.bg-primary-200 {
+	background: variables.$primary-200;
+}
+
+.bg-primary-400 {
+	background: variables.$primary-400;
+}
+
+.bg-error-light {
+	background: variables.$error-light;
+} 
+
+.bg-error {
+	background: variables.$error;
+}
