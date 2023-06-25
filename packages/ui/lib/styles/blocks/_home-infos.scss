@@ -1,0 +1,9 @@
+.home-infos {
+	flex-wrap: wrap;
+
+	& > * {
+		min-width: 20rem;
+		width: calc(50% - 2.5rem);
+		flex-grow: 1;
+	}
+}

@@ -2,6 +2,7 @@
 
 .link {
 	text-decoration: underline;
+	text-underline-offset: .25rem;
 
 	&:hover {
 		color: variables.$primary-400;
