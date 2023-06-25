@@ -4,7 +4,7 @@ import Btn from './Btn.vue';
 </script>
 
 <template>
-    <nav class="flex between center-y | mx-32 mt-32">
+    <nav class="flex between center-y | mt-32">
         <h2 class="sr-only">Main nav</h2>
         <Link href="/" class="title-small-medium clr-primary-400">Bibimbap</Link>
 

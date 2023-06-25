@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
     public function index(): ResponseFactory|Response
     {
-        return inertia('Home');
+        return inertia('Home', ['title' => 'Home page of Bibimbap']);
     }
 }

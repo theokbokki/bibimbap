@@ -1,0 +1,6 @@
+.home-page {
+	max-width: 70.125rem;
+	margin-inline: auto;
+	flex: 1;
+	grid-template-rows: repeat(auto-fit, minmax(0, max-content));
+}
