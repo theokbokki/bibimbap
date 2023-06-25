@@ -10,9 +10,11 @@
         "@vitejs/plugin-vue": "^4.2.3",
         "axios": "^1.1.2",
         "laravel-vite-plugin": "^0.7.5",
+        "sass": "^1.63.6",
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@bibimbap/ui": "workspace:^1.0.0",
         "@inertiajs/vue3": "^1.0.8"
     }
 }
