@@ -11,6 +11,10 @@
 	&::placeholder{
 		color: variables.$neutral-500;
 	}
+
+	&[data-error="true"]{
+		border-color: variables.$error;
+	}
 }
 
 .field-wrapper{
@@ -19,5 +23,10 @@
 
 	&:focus-within {
 		border: 0.09375rem solid variables.$primary-100;
+
+	}
+
+	&:has(.field[data-error="true"]:focus) {
+		border-color: variables.$error-light;
 	}
 }
