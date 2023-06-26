@@ -9,6 +9,5 @@ defineProps({
 <template>
     <h1 class="sr-only" v-text="title"></h1>
     <Nav />
-
     <slot />
 </template>

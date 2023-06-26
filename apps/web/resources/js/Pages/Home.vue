@@ -38,7 +38,10 @@ defineOptions({ layout: Layout })
             <Infobox title="One codebase, run everywhere">
                 <p>
                     The project is setup in a way that allows you to reuse code across desktop, mobile and web apps if you
-                    wish! All of this in a well organised monorepo.
+                    wish! 
+                </p>
+                <p>
+                    All of this in a well organised monorepo.
                 </p>
             </Infobox>
 
