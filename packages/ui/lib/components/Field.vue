@@ -9,10 +9,7 @@ const props = defineProps({
 	label: String,
 	model: String,
 	placeholder: String,
-	hasErrors: {
-		type: Boolean,
-		default: false,
-	}
+	hasErrors: Boolean,
 })
 </script>
 
@@ -24,6 +21,8 @@ const props = defineProps({
 				@input="$emit('update:model', $event.target.value)" class="py-12 px-16 radius-8 smooth | field"
 				:placeholder="props.placeholder" :data-error="hasErrors" />
 		</div>
-		<slot />
+		<div class="clr-error text-small">
+			<slot />
+		</div>
 	</div>
 </template>
