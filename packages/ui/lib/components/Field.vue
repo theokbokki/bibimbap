@@ -7,6 +7,7 @@ const props = defineProps({
 	id: String,
 	name: String,
 	label: String,
+	model: String,
 	placeholder: String,
 	hasErrors: {
 		type: Boolean,
@@ -19,9 +20,10 @@ const props = defineProps({
 	<div class="grid | gy-8">
 		<label :for="props.name">{{ props.label }}</label>
 		<div class="smooth | field-wrapper">
-			<input :type="props.type" :id="props.id" :name="props.name" class="py-12 px-16 radius-8 smooth | field"
+			<input :type="props.type" :id="props.id" :name="props.name" :value="model"
+				@input="$emit('update:model', $event.target.value)" class="py-12 px-16 radius-8 smooth | field"
 				:placeholder="props.placeholder" :data-error="hasErrors" />
 		</div>
-		<slot name="error" />
+		<slot />
 	</div>
 </template>

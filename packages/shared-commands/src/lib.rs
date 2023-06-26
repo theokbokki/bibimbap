@@ -13,7 +13,7 @@ async fn call_api(route: String, params: HashMap<String, String>) -> String {
 async fn call_api_inner(route: String, params: HashMap<String, String>) -> String {
     let client = Client::new();
 
-    let mut request = client.post(&format!("http://127.0.0.1:8000/api/{}", route));
+    let mut request = client.post(&format!("http://web.test/{}", route));
 
     let form_data: Vec<(&str, &str)> = params
         .iter()

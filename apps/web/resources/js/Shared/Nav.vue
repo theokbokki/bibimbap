@@ -1,6 +1,5 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
-import Btn from './Btn.vue';
 </script>
 
 <template>
@@ -21,9 +20,9 @@ import Btn from './Btn.vue';
             <Link href="/auth/login" class="text-medium-large smooth | link">
             Login
             </Link>
-            <Btn href="/auth/register">
-                Register
-            </Btn>
+            <Link as="button" type="submit" href="/auth/register" class="btn">
+            Register
+            </Link>
         </div>
     </nav>
 </template>
