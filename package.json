@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "concurrently \"pnpm --filter @bibimbap/desktop dev\" \"pnpm --filter @bibimbap/web dev\""
+		"dev": "concurrently \"pnpm --filter @bibimbap/desktop dev\" \"pnpm --filter @bibimbap/api dev\" \"pnpm --filter @bibimbap/web dev\""
 	},
 	"keywords": [],
 	"author": "",

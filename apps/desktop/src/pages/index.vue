@@ -9,7 +9,7 @@ async function handleSubmit(e) {
 		formDataObject[key] = value;
 	});
 
-	await callApi('login', { "email": formDataObject.email, "password": formDataObject.password }).then((res) => {
+	await callApi('auth/login', { "email": formDataObject.email, "password": formDataObject.password }).then((res) => {
 		console.log(res);
 	}).catch((err) => {
 		console.log(err);

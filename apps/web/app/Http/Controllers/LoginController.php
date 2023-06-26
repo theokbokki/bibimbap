@@ -10,8 +10,20 @@ use Inertia\ResponseFactory;
 
 class LoginController extends Controller
 {
-    public function __invoke(Request $request): ResponseFactory|Response
+    public function index(Request $request): ResponseFactory|Response
     {
         return inertia('Auth/Login', ['title' => 'Login page of Bibimbap']);
+    }
+
+    public function store(Request $request): JsonResponse
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        return response()->json([
+            'message' => 'it works!',
+        ]);
     }
 }

@@ -1,6 +1,15 @@
 @use '../variables';
 
 .btn {
+	font-size: text-medium-large;
+	padding-inline: 1rem;
+	padding-block: .75rem;
+	background-color: variables.$primary-400;
+	border-radius: .5rem;
+	color: variables.$neutral-200;
+	transition: all smooth 150ms;
+	text-align: center;
+
 	&:hover {
 		background: variables.$primary-200;
 	}
