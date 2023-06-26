@@ -1,0 +1,6 @@
+@use '../variables';
+
+.field {
+	border: 0.03125rem solid variables.$neutral-700;
+	min-width: 400px;
+}
