@@ -3,4 +3,21 @@
 .field {
 	border: 0.03125rem solid variables.$neutral-700;
 	min-width: 400px;
+
+	&:hover, &:focus {
+		border-color: variables.$primary-400;
+	}
+
+	&::placeholder{
+		color: variables.$neutral-500;
+	}
+}
+
+.field-wrapper{
+	border-radius: 10px;
+	border: 0.09375rem solid transparent;
+
+	&:focus-within {
+		border: 0.09375rem solid variables.$primary-100;
+	}
 }

@@ -14,8 +14,8 @@ defineOptions({ layout: [Layout, AuthLayout] });
 
     <h3 class="title-medium-light text-center">Welcome to Bibimbap</h3>
     <form action="" class="grid | gy-32">
-        <Field type="text" label="Username" id="username" name="username"></Field>
-        <Field type="email" label="Email" id="email" name="email"></Field>
+        <Field type="text" label="Username" id="username" name="username" placeholder="ahasucks"></Field>
+        <Field type="email" label="Email" id="email" name="email" placeholder="rick.astley@skynet.co"></Field>
         <Field type="password" label="Password" id="password" name="password"></Field>
         <div class="grid | gy-16">
             <Btn as="button" type="submit" class="text-center">Register</Btn>
