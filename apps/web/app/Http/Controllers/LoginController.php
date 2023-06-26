@@ -23,7 +23,7 @@ class LoginController extends Controller
         ]);
 
         return response()->json([
-            'message' => 'it works!',
+            'message' => 'Logged in',
         ]);
     }
 }

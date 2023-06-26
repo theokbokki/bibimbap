@@ -19,7 +19,7 @@ const form = useForm({
     <Head title="Login" />
 
     <h3 class="title-medium-light text-center">Welcome back</h3>
-    <form @submit.prevent="form.post('/auth/login'); console.log(form.errors)" class="grid | gy-32">
+    <form @submit.prevent="form.post('/auth/login')" class="grid | gy-32">
         <Field v-model:model="form.email" type="email" label="Email" id="email" name="email"
             placeholder="rick.astley@skynet.co">
             <div v-if="form.errors.email">{{ form.errors.email }}</div>
