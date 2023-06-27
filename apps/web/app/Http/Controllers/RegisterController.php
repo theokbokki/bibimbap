@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Response;
 use Inertia\ResponseFactory;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class RegisterController extends Controller
 {
@@ -14,16 +16,16 @@ class RegisterController extends Controller
         return inertia('Auth/Register', ['title' => 'Registration page of Bibimbap']);
     }
 
-    public function store(Request $request): JsonResponse
+    public function store(Request $request)
     {
-        $request->validate([
+        $values = $request->validate([
             'username' => 'required',
             'email' => 'required|email',
             'password' => 'required',
         ]);
 
-        return response()->json([
-            'message' => 'Registered',
-        ]);
+        User::create($values);
+
+        return inertia('Home', ['title' => 'Home page of Bibimbap']);
     }
 }
