@@ -1,5 +1,9 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
+import { computed } from 'vue'
+import { usePage } from '@inertiajs/vue3'
+
+const user = computed(() => usePage().props.auth?.user)
 </script>
 
 <template>
@@ -10,11 +14,12 @@ import { Link } from '@inertiajs/vue3';
         Bibimbap</Link>
 
         <!-- The User avatar -->
-        <!-- TODO: user login -->
-        <Link v-if="false" class="avatar-image">
-        <img src="https://tinyurl.com/bibimbap-rickastley" alt="" class="circle" />
-        </Link>
-
+        <div v-if="user" class="flex center-y | gx-16">
+            <p>@{{ user.username }}</p>
+            <Link class="avatar-image">
+            <img src="https://tinyurl.com/bibimbap-rickastley" alt="" class="circle" />
+            </Link>
+        </div>
         <!-- The login et register links -->
         <div v-else-if="!$page.url.startsWith('/auth')" class=" flex center-y | gx-24">
             <Link href="/auth/login" class="text-medium-large smooth | link">
