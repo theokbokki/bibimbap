@@ -11,4 +11,8 @@
 	&:active, &:focus {
 		color: variables.$primary-100;
 	}
+
+	&.no-underline {
+		text-decoration: none;
+	}
 }
