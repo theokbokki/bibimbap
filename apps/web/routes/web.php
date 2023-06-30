@@ -20,6 +20,7 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/auth/login', [LoginController::class, 'index']);
 Route::post('/auth/login', [LoginController::class, 'store']);
+Route::delete('/auth/login', [LoginController::class, 'destroy']);
 
 Route::get('/auth/register', [RegisterController::class, 'index']);
 Route::post('/auth/register', [RegisterController::class, 'store']);
