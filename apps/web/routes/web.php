@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\RootController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,11 +17,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/auth/login', [LoginController::class, 'index']);
-Route::post('/auth/login', [LoginController::class, 'store']);
-Route::delete('/auth/login', [LoginController::class, 'destroy']);
+Route::middleware('auth')->group(function () {
+    Route::get('/', [RootController::class, 'index']);
 
-Route::get('/auth/register', [RegisterController::class, 'index']);
-Route::post('/auth/register', [RegisterController::class, 'store']);
+    Route::delete('/auth/login', [LoginController::class, 'destroy']);
+});
+
+Route::middleware('guest')->group(function () {
+    Route::get('/auth/login', [LoginController::class, 'index'])->name('login');
+    Route::post('/auth/login', [LoginController::class, 'store']);
+
+    Route::get('/auth/register', [RegisterController::class, 'index']);
+    Route::post('/auth/register', [RegisterController::class, 'store']);
+});
