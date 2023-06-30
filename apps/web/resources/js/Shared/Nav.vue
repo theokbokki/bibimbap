@@ -29,7 +29,7 @@ let showAvatarActions = ref(false)
                 View profile
                 </Link>
                 <div class=" pt-8 avatar-logout">
-                    <Link href="/logout" method="post" as="button" class="text-medium clr-error smooth pointer">
+                    <Link href="/auth/login" method="delete" as="button" class="text-medium clr-error smooth pointer">
                     Logout
                     </Link>
                 </div>
