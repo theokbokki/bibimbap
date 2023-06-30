@@ -8,6 +8,7 @@ position: relative;
 
 	&-actions {
 		position: absolute;
+		z-index: 1;
 		min-width: max-content;
 		top: 2.25rem;
 		right: 0;
