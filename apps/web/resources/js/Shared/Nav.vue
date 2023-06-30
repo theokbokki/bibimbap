@@ -21,6 +21,8 @@ let showAvatarActions = ref(false)
             <div class=" avatar-image">
                 <img src="https://tinyurl.com/bibimbap-rickastley" alt="" class="circle" />
             </div>
+            <div class="transparent-overlay" :class="showAvatarActions ? 'shown' : 'hidden'"
+                @click="showAvatarActions = !showAvatarActions"></div>
             <div ref="avatarActionsElement" class="grid | px-8 py-16 gy-16 radius-8 | avatar-actions"
                 :class="showAvatarActions ? 'shown' : 'hidden'">
                 <Link href="/profile" class="text-medium smooth | link no-underline">
