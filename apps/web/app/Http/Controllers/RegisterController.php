@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Inertia\Response;
 use Inertia\ResponseFactory;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 class RegisterController extends Controller
 {
-    public function index(Request $request): ResponseFactory|Response
+    public function index(Request $request): View|Factory
     {
-        return inertia('Auth/Register', ['title' => 'Registration page of Bibimbap']);
+        return view('auth/register');
     }
 
-    public function store(Request $request)
+    public function store(Request $request): ResponseFactory|Response
     {
         $values = $request->validate([
             'username' => 'required',
