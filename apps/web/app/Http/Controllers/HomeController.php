@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Inertia\Response;
-use Inertia\ResponseFactory;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 
 class HomeController extends Controller
 {
-    public function index(): ResponseFactory|Response
+    public function index(): View|Factory
     {
-        return inertia('Home', ['title' => 'Home page of Bibimbap']);
+        return view('home');
     }
 }
