@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\JsonResponse;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Inertia\Response;
-use Inertia\ResponseFactory;
 
 class LoginController extends Controller
 {
-    public function index(Request $request): ResponseFactory|Response
+    public function index(Request $request): View|Factory
     {
-        return inertia('Auth/Login', ['title' => 'Login page of Bibimbap']);
+        return view('auth/login');
     }
 
     public function store(Request $request): RedirectResponse
@@ -35,7 +33,6 @@ class LoginController extends Controller
         ]);
     }
 
-
     public function destroy(Request $request): RedirectResponse
     {
         Auth::logout();
@@ -46,5 +43,4 @@ class LoginController extends Controller
 
         return redirect('/');
     }
-
 }
