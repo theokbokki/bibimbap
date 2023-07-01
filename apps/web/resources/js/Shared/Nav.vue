@@ -12,9 +12,9 @@ let showAvatarActions = ref(false)
 <template>
     <nav class="flex between center-y | mt-32 | nav">
         <h2 class="sr-only">Main nav</h2>
-        <Link href="/" class="title-small-medium"
+        <a href="/home" class="title-small-medium"
             :class="$page.url.startsWith('/auth') ? 'clr-neutral-200' : 'clr-primary-400'">
-        Bibimbap</Link>
+            Bibimbap</a>
 
         <!-- The User avatar -->
         <div v-if="user" class="grid | gy-8 | avatar" @click="showAvatarActions = !showAvatarActions">
