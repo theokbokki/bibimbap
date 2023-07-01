@@ -1,4 +1,4 @@
-<nav class="flex between center-y | mt-32 | nav">
+<nav class="flex between center-y | mt-32 | nav">
     <h2 class="sr-only">Main nav</h2>
     <a href="/" class="title-small-medium {{ request()->is('auth*') ? 'clr-neutral-200' : 'clr-primary-400' }}">
         Bibimbap</a>
