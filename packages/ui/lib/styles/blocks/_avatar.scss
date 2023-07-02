@@ -1,7 +1,8 @@
 @use '../variables';
 
 .avatar {
-position: relative;
+	position: relative;
+
 	&-image {
 		width: 2rem;
 	}
@@ -12,10 +13,19 @@ position: relative;
 		min-width: max-content;
 		top: 2.25rem;
 		right: 0;
-		border: 0.03125rem solid variables.$neutral-400
+		border: 0.03125rem solid variables.$neutral-400;
+		visibility: hidden;
+	}
+
+	& .transparent-overlay {
+		visibility: hidden;
 	}
 
 	&-logout {
-		border-top: 0.03125rem solid variables.$neutral-400
+		border-top: 0.03125rem solid variables.$neutral-400;
+	}
+
+	& > input:checked ~ *, & > input:checked ~ .transparent-overlay {
+		visibility: visible;
 	}
 }

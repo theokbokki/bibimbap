@@ -28,7 +28,6 @@
 
 	&:focus-within {
 		border: 0.09375rem solid variables.$primary-100;
-
 	}
 
 	&:has(.field[data-error="true"]:focus) {
