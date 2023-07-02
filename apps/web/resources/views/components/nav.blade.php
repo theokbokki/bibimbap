@@ -5,12 +5,12 @@
 
     <!-- The User avatar -->
     @if (auth()->check())
-        <div class="grid | gy-8 | avatar">
-            <input type="checkbox" class="sr-only">
-            <label class="avatar-image">
+        <div class="grid | gy-8 | avatar">
+            <input type="checkbox" class="sr-only" id="avatar-toggle">
+            <label class="avatar-image" for="avatar-toggle"">
                 <img src="https://tinyurl.com/bibimbap-rickastley" alt="" class="circle" />
             </label>
-            <div class="transparent-overlay"></div>
+            <label class="transparent-overlay" for="avatar-toggle"></label>
             <div class="grid | px-8 py-16 gy-16 radius-8 | avatar-actions">
                 <a href="/profile" class="text-medium smooth | link no-underline">
                     View profile
