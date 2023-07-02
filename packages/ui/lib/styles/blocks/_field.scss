@@ -12,8 +12,13 @@
 		color: variables.$neutral-500;
 	}
 
-	&[data-error="true"]{
+	&:has(> p){
 		border-color: variables.$error;
+	}
+
+	&-required:after {
+		content: "*";
+		color: variables.$primary-400;
 	}
 }
 

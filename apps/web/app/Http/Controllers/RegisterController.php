@@ -19,9 +19,9 @@ class RegisterController extends Controller
     public function store(Request $request): ResponseFactory|Response
     {
         $values = $request->validate([
-            'username' => 'required',
-            'email' => 'required|email',
-            'password' => 'required',
+            'username' => 'required | min:4 | max:20',
+            'email' => 'required | email | unique:users',
+            'password' => 'required | min:8',
         ]);
 
         User::create($values);

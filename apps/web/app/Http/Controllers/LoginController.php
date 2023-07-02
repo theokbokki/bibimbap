@@ -28,6 +28,8 @@ class LoginController extends Controller
             return redirect()->intended();
         }
 
+        $request->flashExcept('password');
+
         return back()->withErrors([
             'email' => 'The provided credentials don\'t match',
         ]);
