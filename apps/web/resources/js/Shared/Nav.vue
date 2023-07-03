@@ -20,13 +20,14 @@ const user = computed(() => usePage().props.auth?.user)
             </label>
             <label class="transparent-overlay" for="avatar-toggle"></label>
             <div class="grid | px-8 py-16 gy-16 radius-8 | avatar-actions">
-                <Link href=" /profile" class="text-medium smooth | link no-underline">
+                <Link href="/profile" class="text-medium smooth | link no-underline">
                 View profile
                 </Link>
                 <div class="pt-8 avatar-logout">
-                    <a href="/auth/login" method="delete" as="button" class="text-medium clr-error smooth pointer">
-                        Logout
-                    </a>
+                    <Link href="auth/login" method="delete" as="button" type="submit"
+                        class="text-medium clr-error smooth pointer">
+                    Logout
+                    </Link>
                 </div>
             </div>
         </div>
