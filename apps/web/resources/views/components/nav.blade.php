@@ -7,7 +7,7 @@
     @if (auth()->check())
         <div class="grid | gy-8 | avatar">
             <input type="checkbox" class="sr-only" id="avatar-toggle">
-            <label class="avatar-image" for="avatar-toggle"">
+            <label class="avatar-image pointer" for="avatar-toggle">
                 <img src="https://tinyurl.com/bibimbap-rickastley" alt="" class="circle" />
             </label>
             <label class="transparent-overlay" for="avatar-toggle"></label>
