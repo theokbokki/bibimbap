@@ -1,5 +1,9 @@
 @use 'variables';
 
+body {
+	padding-inline: 2rem;
+}
+
 :root, body {
 	font-family: variables.$text-font;
 	font-size: 1rem;
@@ -15,5 +19,4 @@ body, #app {
 	display: flex;
 	gap: 3.5rem;
 	flex-direction: column;
-	padding-inline: 2rem;
 }
