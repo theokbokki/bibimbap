@@ -3,5 +3,6 @@ export default defineNuxtConfig({
 	devtools: { enabled: true },
 	ssr: false,
 	srcDir: 'src',
-	modules: ['@bibimbap/ui']
+	modules: ['@bibimbap/ui'],
+	css: ['@bibimbap/ui/lib/styles/ui.scss'],
 })
