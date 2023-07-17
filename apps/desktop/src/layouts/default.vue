@@ -1,4 +1,6 @@
 <template>
 	<ui-nav />
-	<NuxtPage />
+	<slot>
+		<NuxtPage />
+	</slot>
 </template>
