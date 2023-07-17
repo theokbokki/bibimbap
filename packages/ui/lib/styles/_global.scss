@@ -13,7 +13,7 @@ body {
 	width: 100vw;
 }
 
-.app-container, #app, #__nuxt{
+.app-container, #app, #__nuxt, #__nuxt>div{
 	height: 100%;
 	width: 100%;
 	display: flex;
