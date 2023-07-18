@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Inertia\Response;
-use Inertia\ResponseFactory;
+use Illuminate\Routing\Redirector;
 
 class RegisterController extends Controller
 {
@@ -16,7 +16,7 @@ class RegisterController extends Controller
         return view('auth/register');
     }
 
-    public function store(Request $request): ResponseFactory|Response
+    public function store(Request $request): Redirector|RedirectResponse
     {
         $values = $request->validate([
             'username' => 'required | min:4 | max:20',
@@ -26,6 +26,6 @@ class RegisterController extends Controller
 
         User::create($values);
 
-        return inertia('Home', ['title' => 'Home page of Bibimbap']);
+        return redirect('auth/login');
     }
 }
