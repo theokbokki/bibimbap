@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Field from '@bibimbap/ui/lib/components/Field.vue';
+import { callApi } from '@bibimbap/shared-commands';
 
 useHead({
 	title: "Login page of Bibimbap",
@@ -7,13 +8,20 @@ useHead({
 definePageMeta({
 	layout: 'auth',
 });
+
+async function handleSubmit() {
+	await callApi('POST', 'auth/login', {
+		email: 'tenoeloeht@gmail.com',
+		password: 'change_this',
+	}).then((res) => { console.log(res) })
+}
 </script>
 
 <template>
 	<Head title="Login" />
 
 	<h3 class="title-medium-light text-center">Welcome back</h3>
-	<form @submit.prevent="" class="grid | gy-32">
+	<form @submit.prevent="handleSubmit" class="grid | gy-32">
 		<Field type="email" label="Email" id="email" name="email" :has-errors="false" placeholder="rick.astley@skynet.co">
 			<p v-if="false">{{ }}</p>
 		</Field>

@@ -51,4 +51,9 @@ class LoginController extends Controller
 
         return redirect('/home');
     }
+
+    public function appStore(Request $request)
+    {
+        return request()->headers;
+    }
 }
