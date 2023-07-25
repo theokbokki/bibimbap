@@ -18,16 +18,9 @@ struct Claims {
 }
 
 fn generate_jwt() -> String {
-    // Set the expiration time for the token (e.g., 1 hour from now)
-    let expiration_time = SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .expect("Failed to obtain current timestamp")
-        .as_secs()
-        + 3600; // Add 1 hour (3600 seconds)
-
     // Create the claims struct
     let claims = Claims {
-        exp: expiration_time as usize,
+        exp: std::u64::MAX as usize,
     };
 
     // Set the dummy secret key
