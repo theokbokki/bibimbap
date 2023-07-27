@@ -2,10 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Exception;
-use Firebase\JWT\ExpiredException;
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -21,8 +17,12 @@ class LoginController extends Controller
         return view('auth/login');
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request): RedirectResponse|string
     {
+        if ($request->get('tauri_app')) {
+            return 'success';
+        }
+
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
@@ -54,29 +54,5 @@ class LoginController extends Controller
         }
 
         return redirect('/home');
-    }
-
-    public function appStore(Request $request)
-    {
-        $token = $request->bearerToken();
-
-        if (empty($token)) {
-            return response()->json(['message' => 'Token not provided'], 401);
-        }
-
-        $key = 'your_dummy_secret_key';
-
-        try {
-            $decoded = JWT::decode($token, new Key($key, 'HS256'));
-
-            return 'success';
-        } catch (ExpiredException $e) {
-            // Handle token expiration...
-            return response()->json(['message' => 'Token has expired'], 401);
-
-        } catch (Exception $e) {
-            // Handle other JWT exceptions or invalid tokens...
-            return response()->json(['message' => 'Invalid token'], 401);
-        }
     }
 }

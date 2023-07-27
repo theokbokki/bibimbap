@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-Route::post('/auth/register', [RegisterController::class, 'store']);
-Route::post('/auth/login', [LoginController::class, 'appStore']);
+Route::middleware('api.auth')->group(function () {
+    Route::post('/auth/register', [RegisterController::class, 'store']);
+    Route::post('/auth/login', [LoginController::class, 'store']);
+});
