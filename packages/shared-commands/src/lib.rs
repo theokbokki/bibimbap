@@ -24,7 +24,7 @@ fn generate_jwt() -> String {
     };
 
     // Set the dummy secret key
-    let secret_key = "your_dummy_secret_key".as_bytes();
+    let secret_key = "secret".as_bytes();
 
     // Generate the JWT
     let token = encode(
