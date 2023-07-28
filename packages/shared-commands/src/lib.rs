@@ -1,4 +1,4 @@
-use jsonwebtoken::{encode, EncodingKey, Header};
+use jsonwebtoken::{decode, encode, DecodingKey, EncodingKey, Header, Validation};
 use reqwest::Client;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
@@ -35,6 +35,17 @@ fn generate_jwt() -> String {
     .expect("Failed to generate JWT");
 
     token
+}
+
+pub fn check_jwt(jwt: String) -> bool {
+    match decode::<Claims>(
+        &jwt,
+        &DecodingKey::from_secret("secret".as_ref()),
+        &Validation::default(),
+    ) {
+        Ok(_) => true,
+        Err(_) => false,
+    }
 }
 
 #[tauri::command]
