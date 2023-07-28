@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreLoginRequest;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -17,18 +18,24 @@ class LoginController extends Controller
         return view('auth/login');
     }
 
-    public function store(Request $request): RedirectResponse|string
+    public function store(StoreLoginRequest $request): RedirectResponse|string|array
     {
+        $loggedIn = Auth::attempt($request->validated());
+
         if ($request->get('tauri_app')) {
-            return 'success';
+            if ($loggedIn) {
+                return ['success' => true];
+            }
+
+            return [
+                'success' => false,
+                'errors' => [
+                    'email' => ['The provided credentials don\'t match'],
+                ],
+            ];
         }
 
-        $credentials = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-
-        if (Auth::attempt($credentials)) {
+        if ($loggedIn) {
             $request->session()->regenerate();
 
             return redirect()->intended();
