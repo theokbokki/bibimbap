@@ -5,7 +5,7 @@ useHead({
 </script>
 
 <template>
-	<section class="flex col flex-1 center-x center-y">
+	<main class="flex col flex-1 center-x center-y">
 		<p class="title-xl clr-neutral-400">An awesome app comes here!</p>
-	</section>
+	</main>
 </template>
