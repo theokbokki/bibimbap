@@ -1,6 +1,7 @@
 <script setup>
 import Field from '@bibimbap/ui/lib/components/Field.vue';
 import { callApi } from '@bibimbap/shared-commands';
+import { open } from '@tauri-apps/api/shell';
 
 useHead({
 	title: "Login page of Bibimbap",
@@ -31,6 +32,12 @@ async function handleSubmit(e) {
 		}
 	})
 }
+
+async function handleRegister() {
+	await callApi('POST', 'auth/register', {}).then(async (r) => {
+		await open('http://web.test/auth/register?token=' + r);
+	});
+}
 </script>
 
 <template>
@@ -47,9 +54,9 @@ async function handleSubmit(e) {
 		<div class="grid | gy-16">
 			<button type="submit" class="btn" :disabled="false">Login</button>
 			<p class="text-end">Don’t have an account yet?
-				<NuxtLink to="http://web.test/auth/register" target="_blank" class="clr-primary-400 smooth | link">
+				<a @click="handleRegister" class="clr-primary-400 smooth pointer | link">
 					Register
-				</NuxtLink>
+				</a>
 			</p>
 		</div>
 	</form>

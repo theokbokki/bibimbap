@@ -22,10 +22,14 @@ fn main() {
                 });
 
                 if let Some(token) = token {
-                    // Extract the path from the URL if the token is present
-                    let path = request.split("://").nth(1).unwrap_or_default();
+                    let path = request
+                        .split("://")
+                        .nth(1)
+                        .unwrap_or_default()
+                        .split('?')
+                        .next()
+                        .unwrap_or_default();
 
-                    // Call the check_jwt function and debug its result
                     dbg!(check_jwt(token.to_string()));
                 }
 
