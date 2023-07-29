@@ -37,14 +37,14 @@ fn generate_jwt() -> String {
     token
 }
 
-pub fn check_jwt(jwt: String) -> bool {
+pub fn check_jwt(jwt: String) -> Result<bool, String> {
     match decode::<Claims>(
         &jwt,
         &DecodingKey::from_secret("secret".as_ref()),
         &Validation::default(),
     ) {
-        Ok(_) => true,
-        Err(_) => false,
+        Ok(_) => Ok(true),
+        Err(err) => Err(err.to_string()),
     }
 }
 
