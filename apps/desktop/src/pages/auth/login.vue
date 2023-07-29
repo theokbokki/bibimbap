@@ -35,7 +35,8 @@ async function handleSubmit(e) {
 
 async function handleRegister() {
 	await callApi('POST', 'auth/register', {}).then(async (r) => {
-		await open('http://web.test/auth/register?token=' + r);
+		navigateTo({ path: '/redirect', query: { token: r } });
+		open('http://web.test/auth/register?token=' + r);
 	});
 }
 </script>

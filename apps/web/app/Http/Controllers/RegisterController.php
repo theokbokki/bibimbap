@@ -42,7 +42,9 @@ class RegisterController extends Controller
 
                 $token = JWT::encode($payload, env('JWT_SECRET'), 'HS256');
 
-                return redirect('bibimbap://auth/login?token='.$token);
+                redirect('bibimbap://auth/login?token='.$token);
+
+                return redirect('/redirect');
             }
         }
 
