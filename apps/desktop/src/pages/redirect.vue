@@ -1,5 +1,6 @@
 <script setup>
 import { open } from '@tauri-apps/api/shell';
+import { listen } from '@tauri-apps/api/event';
 
 useHead({
 	title: "Redirecting to the browser",
@@ -12,6 +13,10 @@ const token = params.get("token");
 function reopenRegister() {
 	open('http://web.test/auth/register?token=' + token);
 }
+
+const unlisten = await listen('scheme-request-received', (e) => {
+	navigateTo(e.payload);
+})
 </script>
 
 <template>

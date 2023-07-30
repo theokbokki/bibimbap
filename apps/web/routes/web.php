@@ -34,4 +34,5 @@ Route::middleware('guest')->group(function () {
     Route::post('/auth/register', [RegisterController::class, 'store'])->name('register');
 
     Route::get('/redirect', [RedirectController::class, 'index']);
+    Route::post('/redirect', [RedirectController::class, 'appRedirect']);
 });

@@ -30,10 +30,12 @@ fn main() {
                         .next()
                         .unwrap_or_default();
 
-                    dbg!(check_jwt(token.to_string()));
+                    if check_jwt(token.to_string()) {
+                        handle
+                            .emit_all("scheme-request-received", path.clone())
+                            .unwrap();
+                    };
                 }
-
-                handle.emit_all("scheme-request-received", request).unwrap();
             })
             .unwrap();
 
