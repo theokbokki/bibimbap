@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\RegistrationTokens;
 use App\Models\User;
-use Firebase\JWT\JWT;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Str;
 
 class RegisterController extends Controller
@@ -19,7 +19,7 @@ class RegisterController extends Controller
         return view('auth/register', ['token' => $request->get('token')]);
     }
 
-    public function store(Request $request): Redirector|RedirectResponse
+    public function store(Request $request): View|Factory|Redirector|RedirectResponse
     {
 
         $values = $request->validate([
@@ -36,13 +36,7 @@ class RegisterController extends Controller
             if (RegistrationTokens::where('token', $token)->first()) {
                 RegistrationTokens::where('token', $token)->delete();
 
-                $payload = [
-                    'exp' => time() + 60,
-                ];
-
-                $token = JWT::encode($payload, env('JWT_SECRET'), 'HS256');
-
-                redirect('bibimbap://auth/login?token='.$token);
+                Cookie::queue('registrationComplete', true, 10);
 
                 return redirect('/redirect');
             }
