@@ -2,7 +2,7 @@
 
 .field {
 	border: 0.03125rem solid variables.$neutral-700;
-	min-width: 400px;
+		min-width: min(80vw, 400px);
 
 	&:hover, &:focus {
 		border-color: variables.$primary-400;
@@ -32,5 +32,11 @@
 
 	&:has(.field[data-error="true"]:focus) {
 		border-color: variables.$error-light;
+	}
+}
+
+@media screen and (max-width: 960px) {
+	.auth-form {
+		margin-left: 0;
 	}
 }

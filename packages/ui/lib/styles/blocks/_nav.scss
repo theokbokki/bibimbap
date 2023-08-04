@@ -1,4 +1,12 @@
+@use '../variables';
+
 .nav {
 	position: relative;
 	z-index: 10;
+}
+
+@media screen and (max-width: 960px) {
+	.nav .logo {
+		color: variables.$primary-400;
+	}
 }

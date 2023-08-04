@@ -10,7 +10,7 @@ async function handleSubmit() {
 <template>
 	<nav class="flex between center-y | mt-32 | nav">
 		<h2 class="sr-only">Main nav</h2>
-		<NuxtLink to="/" class="title-small-medium"
+		<NuxtLink to="/" class="title-small-medium | logo"
 			:class="url.pathname.startsWith('/auth') ? 'clr-neutral-200' : 'clr-primary-400'">Bibimbap</NuxtLink>
 
 		<!-- The User avatar -->

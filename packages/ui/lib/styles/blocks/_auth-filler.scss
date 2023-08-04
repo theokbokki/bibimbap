@@ -1,5 +1,5 @@
 .auth-filler {
-	position: absolute;
+	position: fixed;
 	left: 0;
 	top: 0;
 	bottom: 0;
@@ -8,5 +8,11 @@
 
 	& > p {
 		max-width: 28rem;
+	}
+}
+
+@media screen and (max-width: 960px) {
+	.auth-filler-container {
+		display: none;
 	}
 }
