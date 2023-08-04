@@ -11,7 +11,7 @@ const params = useRequestURL().searchParams;
 const token = params.get("token");
 
 function reopenRegister() {
-	open('http://web.test/auth/register?token=' + token);
+	open('http://web.localhost/auth/register?token=' + token);
 }
 
 const unlisten = await listen('scheme-request-received', (e) => {

@@ -2,7 +2,6 @@ use jsonwebtoken::{decode, encode, DecodingKey, EncodingKey, Header, Validation}
 use reqwest::Client;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
-use std::time::{SystemTime, UNIX_EPOCH};
 use tauri::{
     plugin::{Builder, TauriPlugin},
     Runtime,
@@ -61,11 +60,11 @@ async fn call_api_inner(
     let client = Client::new();
 
     let mut request = match http_verb.as_str() {
-        "GET" => client.get(&format!("http://web.test/api/{}", route)),
-        "POST" => client.post(&format!("http://web.test/api/{}", route)),
-        "PUT" => client.put(&format!("http://web.test/api/{}", route)),
-        "DELETE" => client.delete(&format!("http://web.test/api/{}", route)),
-        "PATCH" => client.patch(&format!("http://web.test/api/{}", route)),
+        "GET" => client.get(&format!("http://web.localhost/api/{}", route)),
+        "POST" => client.post(&format!("http://web.localhost/api/{}", route)),
+        "PUT" => client.put(&format!("http://web.localhost/api/{}", route)),
+        "DELETE" => client.delete(&format!("http://web.localhost/api/{}", route)),
+        "PATCH" => client.patch(&format!("http://web.localhost/api/{}", route)),
         _ => panic!("Invalid HTTP verb"),
     };
 
