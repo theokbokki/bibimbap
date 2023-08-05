@@ -1,8 +1,13 @@
 <script setup>
-const url = useRequestURL()
+const props = defineProps(['user']);
+
+const url = useRequestURL();
+
+const user = JSON.parse(localStorage.getItem('user'));
 
 async function handleSubmit() {
 	localStorage.removeItem('loggedIn');
+	localStorage.removeItem('user');
 	navigateTo('/auth/login');
 }
 </script>
@@ -17,7 +22,7 @@ async function handleSubmit() {
 		<div v-if="!url.pathname.startsWith('/auth')" class="grid | gy-8 | avatar">
 			<input type="checkbox" class="sr-only" id="avatar-toggle">
 			<label class="avatar-image pointer" for="avatar-toggle">
-				<img src="https://tinyurl.com/bibimbap-rickastley" alt="" class="circle" />
+				<img :src="'https://ui-avatars.com/api/?background=random&name=' + user.username" alt="" class=" circle" />
 			</label>
 			<label class="transparent-overlay" for="avatar-toggle"></label>
 			<div class="grid | px-8 py-16 gy-16 radius-8 | avatar-actions">
