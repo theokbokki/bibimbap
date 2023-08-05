@@ -24,7 +24,7 @@ class LoginController extends Controller
 
         if ($request->get('tauri_app')) {
             if ($loggedIn) {
-                return ['success' => true];
+                return ['success' => true, 'user' => auth()->user()];
             }
 
             return [

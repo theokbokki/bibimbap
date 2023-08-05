@@ -25,6 +25,10 @@ async function handleSubmit(e) {
 
 		if (res.success) {
 			localStorage.setItem('loggedIn', true);
+			localStorage.setItem('user', JSON.stringify({
+				email: res.user.email,
+				username: res.user.username,
+			}));
 			navigateTo('/');
 		}
 		else {
