@@ -2,7 +2,7 @@
 
 .field {
 	border: 0.03125rem solid variables.$neutral-700;
-		min-width: min(80vw, 400px);
+	min-width: min(80vw, 400px);
 
 	&:hover, &:focus {
 		border-color: variables.$primary-400;
