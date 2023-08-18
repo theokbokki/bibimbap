@@ -19,7 +19,7 @@ async function handleSubmit() {
 			:class="url.pathname.startsWith('/auth') ? 'clr-neutral-200' : 'clr-primary-400'">Bibimbap</NuxtLink>
 
 		<!-- The User avatar -->
-		<div v-if="!url.pathname.startsWith('/auth')" class="grid | gy-8 | avatar">
+		<div v-if="!url.pathname.startsWith('/auth') && user" class="grid | gy-8 | avatar">
 			<input type="checkbox" class="sr-only" id="avatar-toggle">
 			<label class="avatar-image pointer" for="avatar-toggle">
 				<img :src="'https://ui-avatars.com/api/?background=random&name=' + user.username" alt="" class=" circle" />
